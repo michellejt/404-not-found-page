@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+:root {
+  --gray1: #333333;
+  --gray2: #4f4f4f;
+  --gray3: #bdbdbd;
+  --white: #ffffff;
+}
+
+body {
+  font-family: Space Mono;
+}
+
+main {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 1440px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.column {
+  padding: 1rem;
+  flex: 1;
+}
+
+.column--center {
+  justify-content: center;
+  display: flex;
+}
+
+p {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+  letter-spacing: -0.035em;
+  text-align: left;
+}
+
+h1 {
+  color: var(--gray1);
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 95px;
+  letter-spacing: -0.035em;
+  text-align: left;
+  margin: 0;
+}
+
+.button {
+  background: var(--gray1);
+  width: 216px;
+  height: 68px;
+  font-family: Space Mono;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  letter-spacing: -0.035em;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  color: var(--white);
+  cursor: pointer;
+  margin-top: 50px;
+  overflow: hidden;
+  transition: all 2s ease-in-out;
+}
+
+.button:before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--gray3) 0%, var(--gray1) 100%);
+  transition: all 1s;
+  transform: translateX(-100%);
+  z-index: -1;
+  opacity: 0;
+  transform: scale(0);
+}
+.button:hover,
+.button:focus {
+  color: var(--gray1);
+  transition: all 1s;
+  z-index: 1;
+  cursor: pointer;
+  transform: translateX(0%);
+  letter-spacing: 0.1rem;
+}
+.button:hover:before,
+.button:focus:before {
+  transform: scale(6.6);
+  opacity: 0.9;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+header p {
+  font-family: "Inconsolata", monospace;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: -0.08em;
+  text-align: left;
+  text-transform: uppercase;
+  margin: 40px 0 0 77px;
+  color: var(--gray1);
+}
+
+.subheading {
+  width: 381px;
+  color: var(--gray2);
+}
+
+footer p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: var(--gray3);
+}
+
+.bold {
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .column {
+    width: 100%;
+    flex: auto;
+  }
+}
