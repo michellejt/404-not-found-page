@@ -7,18 +7,15 @@
   --gray3: #bdbdbd;
   --white: #ffffff;
 }
-
 body {
   font-family: Space Mono;
 }
-
 main {
   min-height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -27,17 +24,14 @@ main {
   padding-left: 20px;
   padding-right: 20px;
 }
-
 .column {
   padding: 1rem;
   flex: 1;
 }
-
 .column--center {
   justify-content: center;
   display: flex;
 }
-
 p {
   font-size: 24px;
   font-weight: 400;
@@ -45,7 +39,6 @@ p {
   letter-spacing: -0.035em;
   text-align: left;
 }
-
 h1 {
   color: var(--gray1);
   font-size: 64px;
@@ -55,24 +48,24 @@ h1 {
   text-align: left;
   margin: 0;
 }
-
-a:link {
-  text-decoration: underline;
-  color: var(--gray3);
+a {
+  &:link {
+    text-decoration: underline;
+    color: var(--gray3);
+  }
+  &:hover {
+    color: var(--gray1);
+    background: var(--gray3);
+  }
+  &:focus {
+    color: var(--gray1);
+    background: var(--gray3);
+  }
+  &:visited {
+    color: var(--gray1);
+    background: var(--gray3);
+  }
 }
-a:hover {
-  color: var(--gray1);
-  background: var(--gray3);
-}
-a:focus {
-  color: var(--gray1);
-  background: var(--gray3);
-}
-a:visited {
-  color: var(--gray1);
-  background: var(--gray3);
-}
-
 .button {
   background: var(--gray1);
   width: 216px;
@@ -93,95 +86,95 @@ a:visited {
   overflow: hidden;
   border: solid transparent 2px;
   transition: all 2s ease-in-out;
+  &:before {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--white) 0%, var(--gray1) 100%);
+    transition: all 1s;
+    transform: translateX(-100%);
+    z-index: -1;
+    opacity: 0;
+    transform: scale(0);
+  }
+  &:hover {
+    color: var(--gray1);
+    transition: all 1s;
+    z-index: 1;
+    cursor: pointer;
+    transform: translateX(0%);
+    letter-spacing: 0.1rem;
+    border: solid --gray1 2px;
+    &:before {
+      transform: scale(6.6);
+      opacity: 0.9;
+    }
+  }
+  &:focus {
+    color: var(--gray1);
+    transition: all 1s;
+    z-index: 1;
+    cursor: pointer;
+    transform: translateX(0%);
+    letter-spacing: 0.1rem;
+    border: solid --gray1 2px;
+    &:before {
+      transform: scale(6.6);
+      opacity: 0.9;
+    }
+  }
 }
-.button:before {
-  content: "";
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--white) 0%, var(--gray1) 100%);
-  transition: all 1s;
-  transform: translateX(-100%);
-  z-index: -1;
-  opacity: 0;
-  transform: scale(0);
-}
-.button:hover {
-  color: var(--gray1);
-  transition: all 1s;
-  z-index: 1;
-  cursor: pointer;
-  transform: translateX(0%);
-  letter-spacing: 0.1rem;
-  border: solid --gray1 2px;
-}
-.button:hover:before {
-  transform: scale(6.6);
-  opacity: 0.9;
-}
-.button:focus {
-  color: var(--gray1);
-  transition: all 1s;
-  z-index: 1;
-  cursor: pointer;
-  transform: translateX(0%);
-  letter-spacing: 0.1rem;
-  border: solid --gray1 2px;
-}
-.button:focus:before {
-  transform: scale(6.6);
-  opacity: 0.9;
-}
-
 img {
   max-width: 100%;
   height: auto;
   object-fit: contain;
 }
-
 .bold {
   font-weight: 800;
   font-weight: 700;
 }
-
-header p {
-  font-family: "Inconsolata", monospace;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 25px;
-  letter-spacing: -0.08em;
-  text-align: left;
-  text-transform: uppercase;
-  margin: 40px 0 0 77px;
-  color: var(--gray1);
-  transition: all 700ms;
+header {
+  p {
+    font-family: "Inconsolata", monospace;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 25px;
+    letter-spacing: -0.08em;
+    text-align: left;
+    text-transform: uppercase;
+    margin: 40px 0 0 77px;
+    color: var(--gray1);
+    transition: all 700ms;
+  }
 }
-
 .subheading {
   width: 381px;
   color: var(--gray2);
 }
-
-footer p {
-  font-family: "Montserrat", sans-serif;
-  font-size: 14px;
-  line-height: 17px;
-  letter-spacing: 0em;
-  text-align: center;
-  color: var(--gray3);
+footer {
+  p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: var(--gray3);
+  }
 }
-
 @media (max-width: 1024px) {
   .column {
     width: 100%;
     flex: auto;
   }
-  header p {
-    margin: 25px 0 0 25px;
-    transition: all 700ms;
+  header {
+    p {
+      margin: 25px 0 0 25px;
+      transition: all 700ms;
+    }
   }
   .subheading {
     width: 100%;
   }
-}/*# sourceMappingURL=style.css.map */
+}
